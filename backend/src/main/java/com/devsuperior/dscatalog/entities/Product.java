@@ -23,7 +23,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name ="tb_product")
-public class Products implements Serializable{
+public class Product implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -45,11 +45,11 @@ public class Products implements Serializable{
 		 inverseJoinColumns = @JoinColumn(name = "category_id"))
 	Set<Category> categories = new HashSet<>();
 
-	public Products() {
+	public Product() {
 		
 	}
 
-	public Products(Long id, String name, String description, Double price, String imgUrl, Instant date) {
+	public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -127,7 +127,7 @@ public class Products implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Products other = (Products) obj;
+		Product other = (Product) obj;
 		if (description == null) {
 			if (other.description != null)
 				return false;
